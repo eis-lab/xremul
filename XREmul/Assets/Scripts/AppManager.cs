@@ -39,6 +39,18 @@ public class AppManager : MonoBehaviour
     {
         OnCollideWithSphereOrNot();
 
+        if (!IsRecording && Input.GetKeyDown("r"))
+        {
+            ResetRecordingTimer();
+            IsRecording = true;
+        }
+
+        if (!IsReplaying && Input.GetKeyDown("space"))
+        {
+            ResetReplayingTimer();
+            IsReplaying = true;
+        }
+
         if (IsRecording)
             OnRecord();
         if (IsReplaying)
